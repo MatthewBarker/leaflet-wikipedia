@@ -4,7 +4,7 @@ A leaflet plugin module to display Wikipedia entries on a map layer
 
 ## Dependencies
 
-- [leaflet](git://github.com/Leaflet/Leaflet.git)
+- [leaflet](https://github.com/Leaflet/Leaflet)
 - [jsonp](https://github.com/nispero/Lightweight-JSONP)
 
 ## Installation instructions
