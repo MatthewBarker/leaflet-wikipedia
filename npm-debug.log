@@ -1,0 +1,88 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/codio/.nvm/v0.10.33/bin/node',
+1 verbose cli   '/home/codio/.nvm/v0.10.33/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save-dev',
+1 verbose cli   'gul-rename' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose readDependencies using package.json deps
+5 verbose cache add [ 'gul-rename', null ]
+6 verbose cache add name=undefined spec="gul-rename" args=["gul-rename",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'gul-rename',
+7 verbose parsed url   path: 'gul-rename',
+7 verbose parsed url   href: 'gul-rename' }
+8 silly lockFile fd5defa4-gul-rename gul-rename
+9 verbose lock gul-rename /home/codio/.npm/fd5defa4-gul-rename.lock
+10 silly lockFile fd5defa4-gul-rename gul-rename
+11 silly lockFile fd5defa4-gul-rename gul-rename
+12 verbose addNamed [ 'gul-rename', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile f1cc62d0-gul-rename gul-rename@
+15 verbose lock gul-rename@ /home/codio/.npm/f1cc62d0-gul-rename.lock
+16 silly addNameRange { name: 'gul-rename', range: '*', hasData: false }
+17 verbose request where is /gul-rename
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id 7d2456dd563486f0
+20 verbose url raw /gul-rename
+21 verbose url resolving [ 'https://registry.npmjs.org/', './gul-rename' ]
+22 verbose url resolved https://registry.npmjs.org/gul-rename
+23 verbose request where is https://registry.npmjs.org/gul-rename
+24 info trying registry request attempt 1 at 09:44:15
+25 http GET https://registry.npmjs.org/gul-rename
+26 http 404 https://registry.npmjs.org/gul-rename
+27 verbose headers { date: 'Fri, 10 Apr 2015 09:44:15 GMT',
+27 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 verbose headers   'content-type': 'application/json',
+27 verbose headers   'cache-control': 'max-age=0',
+27 verbose headers   'content-length': '51',
+27 verbose headers   'accept-ranges': 'bytes',
+27 verbose headers   via: '1.1 varnish',
+27 verbose headers   age: '0',
+27 verbose headers   'x-served-by': 'cache-jfk1034-JFK',
+27 verbose headers   'x-cache': 'MISS',
+27 verbose headers   'x-cache-hits': '0',
+27 verbose headers   'x-timer': 'S1428659055.446068,VS0,VE361',
+27 verbose headers   'keep-alive': 'timeout=10, max=50',
+27 verbose headers   connection: 'Keep-Alive' }
+28 silly registry.get cb [ 404,
+28 silly registry.get   { date: 'Fri, 10 Apr 2015 09:44:15 GMT',
+28 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+28 silly registry.get     'content-type': 'application/json',
+28 silly registry.get     'cache-control': 'max-age=0',
+28 silly registry.get     'content-length': '51',
+28 silly registry.get     'accept-ranges': 'bytes',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     age: '0',
+28 silly registry.get     'x-served-by': 'cache-jfk1034-JFK',
+28 silly registry.get     'x-cache': 'MISS',
+28 silly registry.get     'x-cache-hits': '0',
+28 silly registry.get     'x-timer': 'S1428659055.446068,VS0,VE361',
+28 silly registry.get     'keep-alive': 'timeout=10, max=50',
+28 silly registry.get     connection: 'Keep-Alive' } ]
+29 silly lockFile f1cc62d0-gul-rename gul-rename@
+30 silly lockFile f1cc62d0-gul-rename gul-rename@
+31 error 404 404 Not Found: gul-rename
+31 error 404
+31 error 404 'gul-rename' is not in the npm registry.
+31 error 404 You should bug the author to publish it
+31 error 404 It was specified as a dependency of 'Leaflet.WikipediaLayer'
+31 error 404
+31 error 404 Note that you can also install from a
+31 error 404 tarball, folder, or http url, or git url.
+32 error System Linux 3.16.0-33-generic
+33 error command "/home/codio/.nvm/v0.10.33/bin/node" "/home/codio/.nvm/v0.10.33/bin/npm" "install" "--save-dev" "gul-rename"
+34 error cwd /home/codio/workspace
+35 error node -v v0.10.33
+36 error npm -v 1.4.28
+37 error code E404
+38 verbose exit [ 1, true ]
