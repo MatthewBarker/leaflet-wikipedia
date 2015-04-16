@@ -2,6 +2,11 @@
 
 A leaflet plugin module to display Wikipedia entries on a map layer
 
+## Dependencies
+
+- [leaflet](git://github.com/Leaflet/Leaflet.git)
+- [jsonp](https://github.com/nispero/Lightweight-JSONP)
+
 ## Installation instructions
 
 - **npm:**`npm install --save leaflet-wikipedia`
@@ -51,4 +56,3 @@ L.layerGroup.wikipediaLayer({ target: '_blank' }).addTo(map);
 - Specifies where to open the linked Wikipedia page
 - **type:** string
 - **default:** \_self
-

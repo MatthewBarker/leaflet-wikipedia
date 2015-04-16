@@ -12,9 +12,7 @@
   },
   "scripts": {
     "bower": "./node_modules/.bin/bower install",
-    "gulp": "./node_modules/.bin/gulp",
-	"doc": "./node_modules/.bin/gulp doc",
-	"compile": ""
+    "gulp": "./node_modules/.bin/gulp"
   },
   "keywords": [
     "leaflet",
@@ -27,9 +25,6 @@
     "url": "https://github.com/matthewbarker/leaflet-wikipedia/issues"
   },
   "homepage": "https://github.com/matthewbarker/leaflet-wikipedia",
-  "dependencies": {
-    "bower": "^1.4.1"
-  },
   "devDependencies": {
     "bower": "^1.4.1",
     "del": "^1.1.1",

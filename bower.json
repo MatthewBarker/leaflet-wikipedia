@@ -12,12 +12,10 @@
     "dist/leaflet-wikipedia.min.js"
   ],
   "moduleType": [
-    "node"
+    "amd", "globals", "node"
   ],
   "keywords": [
-    "leaflet",
-    "map",
-    "wikipedia"
+    "leaflet", "map", "wikipedia"
   ],
   "license": "ISC",
   "homepage": "https://github.com/matthewbarker/leaflet-wikipedia",

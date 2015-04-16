@@ -6,7 +6,9 @@ var del = require('del'),
     uglify = require('gulp-uglify'), 
     umd = require('gulp-umd');
 
-gulp.task('default', ['clean:scripts'], function() {
+gulp.task('default', ['build', 'doc'], function() { });
+
+gulp.task('build', ['clean:build'], function() {
     return gulp.src('source/*')
         .pipe(jslint({ node: true, nomen: true }))
         .pipe(umd({ 
@@ -29,18 +31,18 @@ gulp.task('default', ['clean:scripts'], function() {
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('clean:scripts', function(callback) {
+gulp.task('doc', ['clean:doc'], function() {
+    return gulp.src(['source/*', 'README.md'])
+        .pipe(jsdoc.parser())
+        .pipe(jsdoc.generator('help', { path: 'ink-docstrap', theme: 'cerulean' }));
+});
+
+gulp.task('clean:build', function(callback) {
     del(['build'], callback);
 });
 
 gulp.task('clean:doc', function(callback) {
     del(['help'], callback);
-});
-
-gulp.task('doc', ['clean:doc'], function() {
-    return gulp.src(['source/*', 'README.md'])
-        .pipe(jsdoc.parser())
-        .pipe(jsdoc.generator('help', { path: 'ink-docstrap', theme: 'cerulean' }));
 });
 
 gulp.task('watch', function() {
