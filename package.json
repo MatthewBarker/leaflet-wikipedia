@@ -1,36 +1,39 @@
 {
-  "name": "leaflet-wikipedia",
-  "version": "1.0.3",
-  "authors": [
-    "MatthewBarker <mrjbarker@hotmail.com>"
-  ],
-  "description": "A leaflet plugin module to display Wikipedia entries on a map layer",
-  "main": [
-    "build/images/wikipedia-icon.png",
-    "build/images/wikipedia-icon-2x.png",
-    "build/leaflet-wikipedia.min.js"
-  ],
-  "moduleType": [
-    "amd",
-    "globals",
-    "node"
-  ],
-  "keywords": [
-    "leaflet",
-    "map",
-    "wikipedia"
-  ],
-  "license": "ISC",
-  "homepage": "https://github.com/matthewbarker/leaflet-wikipedia",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "jsonp": "~0.0.1",
-    "leaflet": "~0.7.3"
-  }
+    'name': 'leaflet-wikipedia',
+    'version': '1.0.3',
+    'description': 'A leaflet plugin module to display Wikipedia entries on a map layer',
+    'main': 'build/leaflet-wikipedia.min.js',
+    'directories': {
+        'example': 'examples'
+    },
+    'repository': {
+        'type': 'git',
+        'url': 'git://github.com/matthewbarker/leaflet-wikipedia.git'
+    },
+    'scripts': {
+        'bower': './node_modules/.bin/bower install',
+        'gulp': './node_modules/.bin/gulp'
+    },
+    'keywords': [
+        'leaflet',
+        'map',
+        'wikipedia'
+    ],
+    'author': 'Matt Barker',
+    'license': 'ISC',
+    'bugs': {
+        'url': 'https://github.com/matthewbarker/leaflet-wikipedia/issues'
+    },
+    'homepage': 'https://github.com/matthewbarker/leaflet-wikipedia',
+    'devDependencies': {
+        'bower': '^1.4.1',
+        'del': '^1.1.1',
+        'ev': '0.0.7',
+        'gulp': '^3.8.11',
+        'gulp-imagemin': '^2.2.1',
+        'gulp-jsdoc': '^0.1.4',
+        'gulp-jslint': '^0.2.2',
+        'gulp-rename': '^1.2.2',
+        'gulp-uglify': '^1.1.0'
+    }
 }
