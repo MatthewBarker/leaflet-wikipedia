@@ -1,8 +1,8 @@
 {
-  "name": "Leaflet.WikipediaLayer",
+  "name": "leaflet-wikipedia",
   "version": "1.0.0",
   "description": "A leaflet plugin module to display Wikipedia entries on a map layer",
-  "main": "dist/leaflet-wikipedia.min.js",
+  "main": "build/leaflet-wikipedia.min.js",
   "directories": {
     "example": "examples"
   },
