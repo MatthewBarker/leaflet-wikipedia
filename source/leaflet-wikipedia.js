@@ -30,7 +30,7 @@ L.icon.wikipediaIcon = function () {
     A Wikipedia layer group for leaflet.
     @class WikipediaLayer
     @param {Object} [options] - These layer options are merged with the default options
-    @param {string} [options.api='https://en.wikipedia.org/w/api.php'] - The URL for the Wikipedia API
+    @param {string} [options.url='https://en.wikipedia.org'] - The URL for Wikipedia
     @param {number} [options.limit=100] - The maximum number of search results to return
     @param {Boolean} [options.popupOnMouseover=false] - If true then the popup will open on mouse over; otherwise it won't
     @param {Boolean} [options.clearOutsideBounds=false] - If true then markers outside the current map bounds will be removed; otherwise they won't
@@ -47,12 +47,19 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
         */
         PAGE: '?curid=',
         /**
+            URL fragment to use when connecting to the API.
+            @constant 
+            @default
+            @private
+        */
+        API: '/w/api.php',
+        /**
             Default layer options. 
             @default
             @private
         */
         options: {
-            api: 'https://en.wikipedia.org/w/api.php',
+            url: 'https://en.wikipedia.org',
             limit: 100,
             popupOnMouseover: false,
             clearOutsideBounds: false,
@@ -101,7 +108,7 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
                 },
                 self = this;
 
-            jsonp.get(this.options.api, parameters, function (response) {
+            jsonp.get(this.options.url + this.API, parameters, function (response) {
                 self.parseData(response);
             });
         },
@@ -113,7 +120,7 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
         */
         getMarker: function (result) {
             var marker = L.marker([result.lat, result.lon], { icon: L.icon.wikipediaIcon() }),
-                href = this.url + this.PAGE + result.pageid,
+                href = this.options.url + this.PAGE + result.pageid,
                 popup = '<a href="' + href + '" target="' + this.options.target + '">' + result.title + '</a>';
 
             marker.bindPopup(popup);
