@@ -18,7 +18,6 @@
   ],
   "license": "ISC",
   "homepage": "https://github.com/matthewbarker/leaflet-wikipedia",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
