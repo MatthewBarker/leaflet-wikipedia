@@ -9,8 +9,8 @@ A leaflet plugin module to display Wikipedia entries on a map layer
 
 ## Installation instructions
 
-- **npm:**`npm install --save leaflet-wikipedia`
-- **Bower:**`bower install --save leaflet-wikipedia`
+- **npm:**`npm install leaflet-wikipedia`
+- **Bower:**`bower install leaflet-wikipedia`
 
 ## Simple example
 
@@ -32,10 +32,10 @@ L.layerGroup.wikipediaLayer().addTo(map);
 L.layerGroup.wikipediaLayer({ target: '_blank' }).addTo(map);
 ```
 
-### api
-- The URL for the Wikipedia API
+### url
+- The URL for Wikipedia
 - **type:** string
-- **default:** https://en.wikipedia.org/w/api.php
+- **default:** https://en.wikipedia.org/
 
 ### limit
 - The maximum number of search results to return

@@ -30,7 +30,7 @@ L.icon.wikipediaIcon = function () {
     A Wikipedia layer group for leaflet.
     @class WikipediaLayer
     @param {Object} [options] - These layer options are merged with the default options
-    @param {string} [options.url='https://en.wikipedia.org'] - The URL for Wikipedia
+    @param {string} [options.url='https://en.wikipedia.org/'] - The URL for Wikipedia
     @param {number} [options.limit=100] - The maximum number of search results to return
     @param {Boolean} [options.popupOnMouseover=false] - If true then the popup will open on mouse over; otherwise it won't
     @param {Boolean} [options.clearOutsideBounds=false] - If true then markers outside the current map bounds will be removed; otherwise they won't
@@ -52,14 +52,14 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
             @default
             @private
         */
-        API: '/w/api.php',
+        API: 'w/api.php',
         /**
             Default layer options. 
             @default
             @private
         */
         options: {
-            url: 'https://en.wikipedia.org',
+            url: 'https://en.wikipedia.org/',
             limit: 100,
             popupOnMouseover: false,
             clearOutsideBounds: false,
