@@ -2,6 +2,9 @@
 
 A leaflet plugin module to display Wikipedia entries on a map layer
 
+## Example
+http://matthewbarker.github.io/leaflet-wikipedia/
+
 ## Dependencies
 
 - [leaflet](https://github.com/Leaflet/Leaflet)
