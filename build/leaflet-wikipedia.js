@@ -44,6 +44,7 @@ L.icon.wikipediaIcon = function () {
     @param {Boolean} [options.popupOnMouseover=false] - If true then the popup will open on mouse over; otherwise it won't
     @param {Boolean} [options.clearOutsideBounds=false] - If true then markers outside the current map bounds will be removed; otherwise they won't
     @param {string} [options.target='_self'] - specifies where to open the linked Wikipedia page
+    @param {string} [options.images='images/'] - specifies the folder that contains the Wikipedia icon images
 */
 L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
     /** @lends module:wikipedia-layer~WikipediaLayer */
@@ -72,7 +73,8 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
             limit: 100,
             popupOnMouseover: false,
             clearOutsideBounds: false,
-            target: '_self'
+            target: '_self',
+            images: 'images/'
         },
         /**
             Create the layer group using the passed options.
@@ -82,6 +84,11 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
         initialize: function (options) {
             options = options || {};
             L.Util.setOptions(this, options);
+
+            if (this.options.images.indexOf('/', this.options.images.length - 1) === -1) {
+                this.options.images += '/';
+            }
+
             this._layers = {};
         },
         /**
@@ -128,7 +135,11 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
             @private
         */
         getMarker: function (result) {
-            var marker = L.marker([result.lat, result.lon], { icon: L.icon.wikipediaIcon() }),
+            var icon = new L.Icon.WikipediaIcon({
+                    iconUrl: this.options.images + 'wikipedia-icon.png',
+                    iconRetinaUrl: this.options.images + 'wikipedia-icon-2x.png'
+                }),
+                marker = L.marker([result.lat, result.lon], { icon: icon }),
                 href = this.options.url + this.PAGE + result.pageid,
                 popup = '<a href="' + href + '" target="' + this.options.target + '">' + result.title + '</a>';
 

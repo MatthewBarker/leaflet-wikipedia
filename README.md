@@ -56,3 +56,8 @@ L.layerGroup.wikipediaLayer({ target: '_blank' }).addTo(map);
 - Specifies where to open the linked Wikipedia page
 - **type:** string
 - **default:** \_self
+
+### images
+- Specifies the folder that contains the Wikipedia icon images
+- **type:** string
+- **default:** images/
