@@ -8,7 +8,7 @@ http://matthewbarker.github.io/leaflet-wikipedia/
 ## Dependencies
 
 - [leaflet](https://github.com/Leaflet/Leaflet)
-- [jsonp](https://github.com/nispero/Lightweight-JSONP)
+- [browser-jsonp](https://github.com/larryosborn/JSONP)
 
 ## Installation instructions
 

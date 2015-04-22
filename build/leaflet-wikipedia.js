@@ -1,13 +1,13 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
-    define(['leaflet', 'jsonp'], factory);
+    define(['leaflet', 'browser-jsonp'], factory);
   } else if (typeof exports === 'object') {
-    module.exports = factory(require('leaflet'), require('jsonp'));
+    module.exports = factory(require('leaflet'), require('browser-jsonp'));
   } else {
     root.L = factory(root.L, root.JSONP);
   }
-}(this, function(L, jsonp) {
-/*global L, jsonp*/
+}(this, function(L, JSONP) {
+/*global L, JSONP*/
 
 'use strict';
 
@@ -114,7 +114,7 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
         */
         requestData: function () {
             var origin = this._map.getCenter(),
-                parameters = {
+                data = {
                     format: 'json',
                     action: 'query',
                     list: 'geosearch',
@@ -124,8 +124,10 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
                 },
                 self = this;
 
-            jsonp.get(this.options.url + this.API, parameters, function (response) {
-                self.parseData(response);
+            JSONP({
+                url: this.options.url + this.API,
+                data: data,
+                success: function (response) { self.parseData(response); }
             });
         },
         /**

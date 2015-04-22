@@ -1,6 +1,6 @@
 {
   "name": "leaflet-wikipedia",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "authors": [
     "MatthewBarker <mrjbarker@hotmail.com>"
   ],
@@ -11,10 +11,14 @@
     "build/leaflet-wikipedia.min.js"
   ],
   "moduleType": [
-    "amd", "globals", "node"
+    "amd",
+    "globals",
+    "node"
   ],
   "keywords": [
-    "leaflet", "map", "wikipedia"
+    "leaflet",
+    "map",
+    "wikipedia"
   ],
   "license": "ISC",
   "homepage": "https://github.com/matthewbarker/leaflet-wikipedia",
@@ -22,11 +26,15 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
+    "example",
+    "gulp",
+	"help",
+	"images",
+	"source",
+	"gulpfile.js"
   ],
   "dependencies": {
-    "jsonp": "~0.0.1",
-    "leaflet": "~0.7.3"
+	"browser-jsonp": "~1.0.8",
+    "leaflet": "~0.7.3"    
   }
 }
