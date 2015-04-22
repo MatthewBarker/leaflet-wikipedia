@@ -6,17 +6,13 @@
     <meta name="description" content="Demo usage for the Leaflet.WikipediaLayer plugin">
     <meta name="author" content="Matt Barker">
     <title>Leaflet-Wikipedia example</title>
-    <link href="https://cdn.rawgit.com/MatthewBarker/leaflet-wikipedia/master/library/leaflet/leaflet.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.rawgit.com/MatthewBarker/leaflet-wikipedia/master/example/leaflet.css" rel="stylesheet" type="text/css" />
     <style>#map { height: 300px; width: 300px; }</style>
 </head>
 <body>
 	<div id="map"></div>
-    <script src="https://cdn.rawgit.com/MatthewBarker/leaflet-wikipedia/master/library/leaflet/leaflet.js"></script>
-    <script src="https://cdn.rawgit.com/MatthewBarker/leaflet-wikipedia/master/library/jsonp/jsonp.js"></script>
-    <script src="https://cdn.rawgit.com/MatthewBarker/leaflet-wikipedia/master/build/leaflet-wikipedia.min.js"></script>
-    <script>       
-        L.Icon.Default.imagePath = 'https://cdn.rawgit.com/MatthewBarker/leaflet-wikipedia/tree/master/library/leaflet/images';
-        
+    <script src="https://cdn.rawgit.com/MatthewBarker/leaflet-wikipedia/master/example/bundle.js"></script>
+    <script>              
         var map = L.map('map').setView([52.4235064, -1.7134741999999998], 12);
 
         // Add an OpenStreetMap tile layer
@@ -25,8 +21,7 @@
         }).addTo(map);
 
         // Add a Wikipedia layer
-        L.layerGroup.wikipediaLayer({ target: '_blank', images: 'https://cdn.rawgit.com/MatthewBarker/leaflet-wikipedia/master/build/images' }).addTo(map);
+        L.layerGroup.wikipediaLayer({ target: '_blank', images: '../build/images' }).addTo(map);
     </script>
 </body>
 </html>
-
