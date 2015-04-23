@@ -1,5 +1,7 @@
 # Leaflet-Wikipedia
 
+[![NPM](https://nodei.co/npm/leaflet-wikipedia.png)](https://nodei.co/npm/leaflet-wikipedia/)
+
 A leaflet plugin module to display Wikipedia entries on a map layer
 
 ## Example
