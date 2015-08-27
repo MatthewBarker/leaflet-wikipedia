@@ -1,6 +1,6 @@
 {
   "name": "leaflet-wikipedia",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "authors": [
     "MatthewBarker <mrjbarker@hotmail.com>"
   ],
@@ -28,13 +28,13 @@
     "bower_components",
     "example",
     "gulp",
-	"help",
-	"images",
-	"source",
-	"gulpfile.js"
+    "help",
+    "images",
+    "source",
+    "gulpfile.js"
   ],
   "dependencies": {
-	"browser-jsonp": "~1.0.8",
-    "leaflet": "~0.7.3"    
+    "browser-jsonp": "~1.0.8",
+    "leaflet": "~0.7.3"
   }
 }
