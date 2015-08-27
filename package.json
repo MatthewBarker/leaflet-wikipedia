@@ -12,7 +12,10 @@
   },
   "scripts": {
     "bower": "./node_modules/.bin/bower install",
-    "gulp": "./node_modules/.bin/gulp"
+    "gulp": "./node_modules/.bin/gulp",
+    "preversion": "npm run gulp",
+    "version": "git add -A",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [
     "leaflet",

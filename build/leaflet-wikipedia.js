@@ -21,8 +21,8 @@ L.Icon.WikipediaIcon = L.Icon.extend({
     options: {
         iconUrl: 'images/wikipedia-icon.png',
         iconRetinaUrl: 'images/wikipedia-icon-2x.png',
-        iconSize:     [40, 40],
-        popupAnchor:  [0, -20]
+        iconSize: [40, 40],
+        popupAnchor: [0, -20]
     }
 });
 
@@ -45,26 +45,28 @@ L.icon.wikipediaIcon = function () {
     @param {Boolean} [options.clearOutsideBounds=false] - If true then markers outside the current map bounds will be removed; otherwise they won't
     @param {string} [options.target='_self'] - specifies where to open the linked Wikipedia page
     @param {string} [options.images='images/'] - specifies the folder that contains the Wikipedia icon images
+    @param {number} [options.minZoom='0'] - minimum zoom number
+    @param {number} [options.maxZoom='18'] - maximum zoom number
 */
 L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
     /** @lends module:wikipedia-layer~WikipediaLayer */
     {
         /**
             Query string fragment to use when linking to a Wikipedia page.
-            @constant 
+            @constant
             @default
             @private
         */
         PAGE: '?curid=',
         /**
             URL fragment to use when connecting to the API.
-            @constant 
+            @constant
             @default
             @private
         */
         API: 'w/api.php',
         /**
-            Default layer options. 
+            Default layer options.
             @default
             @private
         */
@@ -74,7 +76,9 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
             popupOnMouseover: false,
             clearOutsideBounds: false,
             target: '_self',
-            images: 'images/'
+            images: 'images/',
+            minZoom: 0,
+            maxZoom: 18
         },
         /**
             Create the layer group using the passed options.
@@ -106,14 +110,16 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
         */
         onRemove: function (map) {
             map.off('moveend', this.requestData, this);
-            this.clearMarkers();
+            this.clearLayers();
+            this._layers = {};
         },
         /**
             Send a query request for JSONP data.
             @private
         */
         requestData: function () {
-            var origin = this._map.getCenter(),
+            var zoom = this._map.getZoom(),
+                origin = this._map.getCenter(),
                 data = {
                     format: 'json',
                     action: 'query',
@@ -124,11 +130,16 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
                 },
                 self = this;
 
-            JSONP({
-                url: this.options.url + this.API,
-                data: data,
-                success: function (response) { self.parseData(response); }
-            });
+            if (zoom >= this.options.minZoom && zoom <= this.options.maxZoom) {
+                JSONP({
+                    url: this.options.url + this.API,
+                    data: data,
+                    success: function (response) { self.parseData(response); }
+                });
+            } else {
+                this.clearLayers();
+                this._layers = {};
+            }
         },
         /**
             Create a new marker.
@@ -166,7 +177,7 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
 
             if (!this._layers[key]) {
                 this._layers[key] = marker;
-                this._map.addLayer(marker);
+                this.addLayer(marker);
             }
         },
         /**
@@ -215,7 +226,7 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
                     latLng = this._layers[key].getLatLng();
 
                     if (!bounds.contains(latLng)) {
-                        this._map.removeLayer(this._layers[key]);
+                        this.removeLayer(this._layers[key]);
                         delete this._layers[key];
                     }
                 }
@@ -232,5 +243,6 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
 L.layerGroup.wikipediaLayer = function (options) {
     return new L.LayerGroup.WikipediaLayer(options);
 };
+
 return L;
 }));
