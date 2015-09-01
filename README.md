@@ -66,3 +66,13 @@ L.layerGroup.wikipediaLayer({ target: '_blank' }).addTo(map);
 - Specifies the folder that contains the Wikipedia icon images
 - **type:** string
 - **default:** images/
+
+### minZoom
+- Specifies the minimum zoom number
+- **type:** number
+- **default:** 0
+
+### maxZoom
+- Specifies the maximum zoom number
+- **type:** number
+- **default:** 18
