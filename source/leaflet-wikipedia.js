@@ -201,7 +201,7 @@ L.LayerGroup.WikipediaLayer = L.LayerGroup.extend(
                 southEast = bounds.getSouthEast(),
                 radius = northWest.distanceTo(southEast) / 2;
 
-            return radius > 10000 ? 10000 : radius;
+            return radius > 10000 ? 10000 : Math.round(radius);
         },
         /**
             Clear all markers currently outside the map bounds.
